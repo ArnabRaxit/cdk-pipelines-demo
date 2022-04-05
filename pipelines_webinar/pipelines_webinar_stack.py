@@ -45,6 +45,4 @@ class PipelinesWebinarStack(core.Stack):
         #     deployment_config=codedeploy.LambdaDeploymentConfig.CANARY_10_PERCENT_10_MINUTES,
         #     alarms=[failure_alarm])
 
-        # self.url_output = core.CfnOutput(self, 'Url',
-        #     value=gw.url
-        )
+        self.url_output = 'test dummy url')

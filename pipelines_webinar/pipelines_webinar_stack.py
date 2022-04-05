@@ -47,4 +47,3 @@ class PipelinesWebinarStack(core.Stack):
 
         # self.url_output = core.CfnOutput(self, 'Url',
         #     value=gw.url)
-

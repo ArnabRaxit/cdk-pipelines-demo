@@ -7,4 +7,4 @@ CDK Pipelines Webinar.
 
 ## Webinar: Enhanced CI/CD with AWS CDK
 
-[![Enhanced CI/CD with AWS CDK](http://img.youtube.com/vi/1ps0Wh19MHQ/0.jpg)](https://www.youtube.com/watch?v=1ps0Wh19MHQ)
+[![Enhanced CI/CD with AWS CDK](http://img.youtube.com/vi/1ps0Wh19MHQ/0.jpg)](https://www.youtube.com/watch?v=1ps0Wh19MHQ) 

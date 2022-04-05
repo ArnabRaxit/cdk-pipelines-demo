@@ -17,7 +17,8 @@ class PipelinesWebinarStack(core.Stack):
         handler = lmb.Function(self, 'Handler',
             runtime=lmb.Runtime.PYTHON_3_7,
             handler='handler.handler',
-            code=lmb.Code.from_asset(path.join(this_dir, 'lambda')))
+            # code=lmb.Code.from_asset(path.join(this_dir, 'lambda')))
+            code = lmb.Code.from_inline("def handler(event, context): return {'body': 'Oops','statusCode': '500'}")
 
         alias = lmb.Alias(self, 'HandlerAlias',
             alias_name='Current',

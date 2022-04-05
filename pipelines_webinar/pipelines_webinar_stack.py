@@ -20,31 +20,31 @@ class PipelinesWebinarStack(core.Stack):
             # code=lmb.Code.from_asset(path.join(this_dir, 'lambda')))
             code = lmb.Code.from_inline("def handler(event, context): return {'body': 'Oops','statusCode': '500'}")
 
-        alias = lmb.Alias(self, 'HandlerAlias',
-            alias_name='Current',
-            version=handler.current_version)
+        # alias = lmb.Alias(self, 'HandlerAlias',
+        #     alias_name='Current',
+        #     version=handler.current_version)
 
-        gw = apigw.LambdaRestApi(self, 'Gateway',
-            description='Endpoint for a simple Lambda-powered web service',
-            handler=alias)
+        # gw = apigw.LambdaRestApi(self, 'Gateway',
+        #     description='Endpoint for a simple Lambda-powered web service',
+        #     handler=alias)
 
-        failure_alarm = cloudwatch.Alarm(self, 'FailureAlarm',
-            metric=cloudwatch.Metric(
-                metric_name='5XXError',
-                namespace='AWS/ApiGateway',
-                dimensions={
-                    'ApiName': 'Gateway',
-                },
-                statistic='Sum',
-                period=core.Duration.minutes(1)),
-            threshold=1,
-            evaluation_periods=1)
+        # failure_alarm = cloudwatch.Alarm(self, 'FailureAlarm',
+        #     metric=cloudwatch.Metric(
+        #         metric_name='5XXError',
+        #         namespace='AWS/ApiGateway',
+        #         dimensions={
+        #             'ApiName': 'Gateway',
+        #         },
+        #         statistic='Sum',
+        #         period=core.Duration.minutes(1)),
+        #     threshold=1,
+        #     evaluation_periods=1)
 
-        codedeploy.LambdaDeploymentGroup(self, 'DeploymentGroup',
-            alias=alias,
-            deployment_config=codedeploy.LambdaDeploymentConfig.CANARY_10_PERCENT_10_MINUTES,
-            alarms=[failure_alarm])
+        # codedeploy.LambdaDeploymentGroup(self, 'DeploymentGroup',
+        #     alias=alias,
+        #     deployment_config=codedeploy.LambdaDeploymentConfig.CANARY_10_PERCENT_10_MINUTES,
+        #     alarms=[failure_alarm])
 
-        self.url_output = core.CfnOutput(self, 'Url',
-            value=gw.url)
+        # self.url_output = core.CfnOutput(self, 'Url',
+        #     value=gw.url)
 

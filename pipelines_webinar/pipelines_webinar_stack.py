@@ -46,4 +46,5 @@ class PipelinesWebinarStack(core.Stack):
         #     alarms=[failure_alarm])
 
         # self.url_output = core.CfnOutput(self, 'Url',
-        #     value=gw.url)
+        #     value=gw.url
+        )

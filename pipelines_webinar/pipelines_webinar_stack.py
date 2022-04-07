@@ -16,6 +16,7 @@ class PipelinesWebinarStack(core.Stack):
 
 
 
+
         with open("lambda-handler.py", encoding="utf8") as fp:
             handler_code = fp.read()
 
@@ -42,3 +43,4 @@ class PipelinesWebinarStack(core.Stack):
 
         self.url_output = core.CfnOutput(self, 'Url',
             value='test url none')
+

@@ -4,7 +4,7 @@ from aws_cdk import core
 
 from pipelines_webinar.pipeline_stack import PipelineStack
 
-PIPELINE_ACCOUNT = '488621687673'
+PIPELINE_ACCOUNT = '472009282539'
 
 app = core.App()
 PipelineStack(app, 'PipelineStack', env={
